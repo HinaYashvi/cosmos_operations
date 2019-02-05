@@ -1,0 +1,85 @@
+<div data-name="change_pwd" class="page navbar-fixed toolbar-fixed" > 
+	<!-- All parts will have "sliding" effect on page transition -->
+	<div class="navbar inner-header">
+	  <!-- Additional "sliding" class -->
+	  <div class="navbar-inner sliding">
+	    <div class="left ">
+        <a class="link panel-open" href="#" data-panel="left" onclick="openPanel()">
+          <i class="f7-icons size-22 orange-text leftbars">bars</i>
+        </a>
+	    </div>
+	    <div class="title text-uppercase orange-text">Dashboard</div>
+	    <div class="right">
+	       <!-- <a class="link popover-open" href="#" data-popover=".popover-links" ><i class="f7-icons size-22 orange-text">more_vertical</i></a>  -->               
+	    </div>
+	  </div>
+	</div>
+ <form class="list changePwdForm" id="my-form">
+  <input type="hidden" name="hidden_uid" id="hidden_uid">
+  <div class="page-content">
+    <div class="card w-96 float-left">
+      <div class="card-header tab_bg">
+        <div class="data-table-title" id="u_name"></div>     
+      </div>        	
+    	<div class="block">		  
+    	  	<div class="row mt-15p">          
+    	    	<div class="form-div no-hairlines">
+              <ul>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Old Password</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="old_pass" id="old_pass" placeholder="Old Password" required validate data-error-message="Old Password should not be empty." >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">New Password</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="new_pass" id="new_pass" placeholder="New Password" required validate data-error-message="New Password should not be empty." >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Retype Password</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="retype_pass" id="retype_pass" placeholder="Retype Password" required validate data-error-message="Retype Password should not be empty." >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <div id="success-badge" class="display-none ml-5p w-50"><span class="badge color-green match-text m-l-15" ></span></div>
+                <div id="warning-badge" class="display-none ml-5p w-50"><span class="badge color-red unmatch-text m-l-15" ></span></div>
+
+                <li class="item-content item-input m-t-20p">
+                    <div class="item-inner">
+                        <div class="item-input-wrap">
+                            <button type="button" class="col button button-fill mt-p-5 save_btn" name="save" onclick="changePass()">CHANGE PASSWORD</button>
+                        </div>
+                    </div>
+                </li>
+                
+              </ul>
+            </div>
+    	  	</div>		 
+    	</div>
+    </div><!-- card -->
+	</div><!-- .page-content -->
+ </form>
+	
+  <div class="toolbar toolbar-bottom-md footer-bg inner-footer">
+    <div class="toolbar-inner">
+      <a class="link"></a>
+      <div class="link orange-text text-capitalize ">powered by &nbsp; <span class="fa fa-star gly-spin "></span><a class="link external orange-text text-uppercase linkspace" href="http://staroneweb.co.in" target="_system"> star one web</a></div>
+      <a class="link"></a> 
+    </div>
+  </div>
+</div>

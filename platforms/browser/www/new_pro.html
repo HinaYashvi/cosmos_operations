@@ -1,0 +1,405 @@
+<div data-name="new_pro" class="page navbar-fixed toolbar-fixed" > 
+  <!-- All parts will have "sliding" effect on page transition -->
+  <div class="navbar inner-header">
+    <!-- Additional "sliding" class -->
+    <div class="navbar-inner sliding">
+      <div class="left ">
+        <a class="link panel-open" href="#" data-panel="left" onclick="openPanel()">
+          <i class="f7-icons size-22 leftbars">bars</i> 
+        </a>  
+      </div>
+      <div class="title text-uppercase">New Pro.Registration</div>
+      <div class="right">
+         <span class="u_pic"></span>       
+      </div>
+    </div>
+  </div>
+
+  <form class="list newproreg" id="my-form">
+  <div class="page-content scrollpage">              
+    <div class="block">
+      <div class="row">
+        <div class="form-div no-hairlines">          
+            <ul> 
+              <input type="hidden" name="sess_u_id" id="sess_u_id">
+              <input type="hidden" name="mode" id="mode" value="add">
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Name</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" placeholder="Name (as per Aadhar Card)" required validate class="nameString" data-error-message="Name should not be empty." onkeyup="usernameValidation($(this))">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!--a class="list-button item-link fs-14 picbox-text" href="#" onclick="logOut()">Logout</a-->
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Street 1</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="street_1" placeholder="Street 1" required validate data-error-message="Street1 should not be empty.">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Street 2</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="street_2" placeholder="Street 2" required validate data-error-message="Street2 should not be empty.">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">State</div>
+                    <div class="item-input-wrap input-dropdown-wrap">
+                      <select placeholder="STATE" name="state" id="state" onchange="getDist(this.value)" required validate data-error-message="Select state.">                      
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              <li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">District</div>
+                    <div class="item-input-wrap input-dropdown-wrap">
+                      <select placeholder="DISTRICT" name="dist" id="dist" class="districtHtml" onchange="getCityNew(this.value)" required validate data-error-message="Select district.">                        
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              <li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">City</div>
+                    <div class="item-input-wrap input-dropdown-wrap">
+                      <select placeholder="CITY" name="city" id="city" class="citys_name" required validate data-error-message="Select city."></select>
+                    </div>
+                  </div>
+                </div>
+              <li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Pincode</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="pincode" placeholder="xxxxxx" required validate onkeypress="num_pincode()" class="pincode" onchange="check_pin_length(this.value)" data-error-message="Pincode should not be empty." maxlength="6" onkeyup="numericValidation($(this))">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Mobile</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="mobile" placeholder="Mobile" required validate 
+                      onfocusout="mobile_length(this.value)" data-error-message="Mobile no should not be empty." maxlength="10" onkeyup="numericValidation($(this))">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Qualification</div>
+                    <div class="item-input-wrap input-dropdown-wrap">
+                      <select placeholder="Qualification" name="qualification" id="qualification" onchange="changeQualification(this.value)" class="qualificationChange" required validate data-error-message="Select qualification.">
+                      <option value="">SELECT QUALIFICATION</option>
+                      <option value="1" data-type="blue" data-table="">Below 10th Standard</option>
+                      <option value="2" data-type="blue" data-table="">S.S.C. / 10th Standard Pass</option>
+                      <option value="3" data-type="blue" data-table="">H.S.C. / 12th Standard Pass - Arts</option>
+                      <option value="4" data-type="blue" data-table="">H.S.C. / 12th Standard Pass - Science</option>
+                      <option value="5" data-type="blue" data-table="">H.S.C. / 12th Standard Pass - Commerce</option>
+                      <option value="6" data-type="blue" data-table="tbl_iti">I.T.I. - After 10th - Engineering</option>
+                      <option value="7" data-type="blue" data-table="tbl_iti" >I.T.I. - After 10th - Non-Engineering</option>
+                      <option value="8" data-type="blue" data-table="tbl_iti" >I.T.I. - After 12th - Engineering</option>
+                      <option value="9" data-type="blue" data-table="tbl_iti" >I.T.I. - After 12th - Non - Engineering</option>
+                      <option value="10" data-type="white" data-table="tbl_diploma_sci">Diploma - Science</option>
+                      <option value="11" data-type="white" data-table="tbl_diploma_com">Diploma - Commerce</option>
+                      <option value="12" data-type="white" data-table="tbl_diploma_art">Diploma - Arts</option>
+                      <option value="13" data-type="white" data-table="tbl_degree">Graduate</option>
+                      <option value="14" data-type="white" data-table="tbl_master">Masters</option>
+                      <option value="15" data-type="white" data-table="">PHD</option>
+                    </select>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <input type="hidden" name="hidden_collar_type" id="hidden_collar_type" class="hidden_collar_type">
+              <input type="hidden" name="specializationTable" id="specializationTable" class="specializationTable">
+              <input type="hidden" name="collar_type_id" id="collar_type_id" class="collar_type_id">
+
+              <li id="spec_li">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Specialization</div>
+                    <div class="item-input-wrap input-dropdown-wrap specialization" id="specialization"></div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <button class="col button button-small button-outline btn_color" type="button" onclick="showIcons()">Upload Photo</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="item-content item-input showtwoBlocks display-none">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <div class="uploadDiv w-100 display-none">
+                      <div class="col-100">
+                        <div class="row">
+                          <div class="20"></div>
+                          <div class="col-50 picbox text-white" >
+                            <span onclick="capturePhoto();" >
+                              <div class="innerDiv">
+                                <!--i class="f7-icons picbox-text">camera</i><br/-->
+                                <img src="img/icons/photo-camera-1.png" height="50" width="50" /><br/>
+                                <span class="picbox-text">Capture</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-50 picbox text-white" >
+                          <a onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+                            <div class="innerDiv">
+                              <!--i class="f7-icons picbox-text">photos</i><br/-->
+                              <img src="img/icons/gallery.png" height="50" width="50" /><br/>
+                              <span class="picbox-text">Photo Gallery</span>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="20"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li> 
+
+            <!--li class="item-content item-input imageblock">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <img id="image" src="" style="display:none;width:100%;">
+                </div>
+              </div>
+            </li-->
+
+            <li class="item-content item-input imageblock display-none" style="width:100%;" id="imageblock">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <img id="image" src="" style="width:100%;">
+                </div>
+              </div>
+            </li>
+
+            <!--li class="item-content item-input upldbtnDiv " style="display:none;width:100%;" id="upldbtnDiv">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <button onclick="upload_userpic();" type="button" class="col button button-fill color-gray " id="upldbtn" >Upload</button>
+                </div>
+              </div>
+            </li-->
+
+            <li>
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">DOB</div>
+                  <div class="item-input-wrap">
+                    <!--input type="date" name="dob" id="Date of birth" required validate data-error-message="DOB shold not be empty."-->
+
+                    <input type="text" placeholder="Select date" readonly="readonly" id="demo-calendar-modal" name="dob" required validate data-error-message="DOB shold not be empty."/>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+              <label class="col-50 item-radio item-content">
+                <input type="radio" name="gender" value="M" onchange="getgenderimage(this.value)"/>
+                <i class="icon icon-radio"></i>
+                <div class="item-inner">
+                  <div class="item-title">Male</div>
+                </div>
+                <span id="male_img"></span>
+              </label>
+              <label class="col-50 item-radio item-content">
+                <input type="radio" name="gender" value="F" onchange="getgenderimage(this.value)"/>
+                <i class="icon icon-radio"></i>
+                <div class="item-inner">
+                  <div class="item-title">Female</div>
+                </div>
+                <span id="female_img"></span>
+                </label>
+            </div>
+            </li>
+
+            <li>
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Aadhar Card No</div>
+                  <div class="item-input-wrap m-l-35 my-input-wrap">
+                    <!--input type="text" name="aadhar_no" placeholder="xxxx xxxx xxxx" maxlength="14" class="e_aadhaar_no" onkeyup="check_aadhar($(this))" id="aadhar_no" --> 
+
+                      <input type="text" name="aadhar_no1" placeholder="xxxx" class="e_aadhaar_no pull-left aadhar_width"  maxlength="4" onkeyup="setFocus();numericValidation($(this))" id="aadhar_txt1" > <span class="pull-left dash_span">-</span>
+                      <input type="text" name="aadhar_no2" placeholder="xxxx" class="e_aadhaar_no pull-left aadhar_width"  maxlength="4" onkeyup="setFocus();numericValidation($(this))" id="aadhar_txt2"> <span class="pull-left dash_span">-</span>
+                      <input type="text" name="aadhar_no3" placeholder="xxxx" class="e_aadhaar_no pull-left aadhar_width"  maxlength="4" id="aadhar_txt3" onkeyup="add_check_aadhar();numericValidation($(this))">                    
+                  </div> 
+                </div>
+              </div>
+            </li>
+
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <button class="col button button-small button-outline btn_color" type="button" onclick="showIcons_aadhar()">Upload Aadhar Photo</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="item-content item-input showtwoBlocks_aadhar display-none">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <div class="uploadDiv w-100 display-none">
+                      <div class="col-100">
+                        <div class="row">
+                          <div class="20"></div>
+                          <div class="col-50 picbox text-white" >
+                            <span onclick="capturePhoto_aadhar();" >
+                              <div class="innerDiv">
+                                <!--i class="f7-icons picbox-text">camera</i><br/-->
+                                <img src="img/icons/photograph.png" height="50" width="50" /><br/>
+                                <span class="picbox-text">Capture</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-50 picbox text-white" >
+                          <a onclick="getPhoto_aadhar(pictureSource1.PHOTOLIBRARY);">
+                            <div class="innerDiv">
+                              <!--i class="f7-icons picbox-text">photos</i><br/-->
+                              <img src="img/icons/landscape-1.png" height="50" width="50" /><br/>
+                              <span class="picbox-text">Photo Gallery</span>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="20"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--li class="item-content item-input imageblock">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <img id="aadhar_image" src="" style="display:none;width:100%;">
+                </div>
+              </div>
+            </li--> 
+
+            <li class="item-content item-input imageblock display-none" style="width:100%;" id="imageblock">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <img id="aadhar_image" src="" style="width:100%;">
+                </div>
+              </div>
+            </li>
+
+            <!--li class="item-content item-input uploadDiv_aadhar " style="display:none;width:100%;" id="uploadDiv_aadhar">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <button onclick="upload_aadhar();" type="button" class="col button button-fill color-gray " id="upldbtn_aadhar" >Upload Aadhar</button>
+                </div>
+              </div>
+            </li-->
+
+            <li>
+              <div class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Year of passing</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="year_passing" id="year_passing" placeholder="Year of passing"  maxlength="4" onkeyup="numericValidation($(this))">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap input-dropdown-wrap">
+                    <select placeholder="EXPERIENCE" name="experience" id="experience">
+                      <option value="">SELECT EXPERIENCE</option>
+                      <option value="1">Fresh</option>
+                      <option value="2">1 Year</option>
+                      <option value="3">2 Year</option>
+                      <option value="4">3 Year</option>
+                      <option value="5">4 Year</option>
+                      <option value="6">5 Year</option>
+                      <option value="7">6 Year</option>
+                      <option value="8">7 Year</option>
+                      <option value="9">8 Year</option>
+                      <option value="10">9 Year</option>
+                      <option value="11">10+ Year</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Batch Reference</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="batch_ref" placeholder="Batch Reference">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="item-content item-input">
+                  <div class="item-inner">
+                      <div class="item-input-wrap">
+                          <button type="button" class="col button button-fill mt-p-5 save_btn mb-15" name="save" onclick="save_pro()">SAVE</button>
+                      </div>
+                  </div>
+              </li>
+            </ul>          
+        </div>
+      </div>
+    </div>
+  </div><!-- .page-content -->
+  </form>
+  
+  
+  <div class="toolbar toolbar-bottom-md footer-bg inner-footer">
+    <div class="toolbar-inner">
+      <a class="link"></a>
+      <div class="link text-capitalize ">powered by &nbsp; <span class="fa fa-star gly-spin "></span><a class="link external orange-text text-uppercase linkspace" href="http://staroneweb.co.in" target="_system"> star one web</a></div>
+      <a class="link"></a> 
+    </div>
+  </div>
+</div>
