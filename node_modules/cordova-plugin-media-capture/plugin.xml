@@ -22,7 +22,7 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:rim="http://www.blackberry.com/ns/widgets"
            id="cordova-plugin-media-capture"
-      version="2.0.0">
+      version="1.4.3">
     <name>Capture</name>
 
     <description>Cordova Media Capture Plugin</description>
@@ -31,11 +31,8 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git</repo>
     <issue>https://issues.apache.org/jira/browse/CB/component/12320646</issue>
 
-    <engines>
-        <engine name="cordova-android" version=">=6.3.0" />
-    </engines>
-
-    <dependency id="cordova-plugin-file" version="^5.0.0" />
+    <dependency id="cordova-plugin-file" version="^4.0.0" />
+    <dependency id="cordova-plugin-compat" version="^1.0.0" />
 
     <js-module src="www/CaptureAudioOptions.js" name="CaptureAudioOptions">
         <clobbers target="CaptureAudioOptions" />
@@ -148,6 +145,21 @@ xmlns:rim="http://www.blackberry.com/ns/widgets"
 
         <framework src="CoreGraphics.framework" />
         <framework src="MobileCoreServices.framework" />
+
+        <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+        </config-file>
+
+        <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>
 
     </platform>
 

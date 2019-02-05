@@ -4,8 +4,15 @@
   "name": "COSMOS-JOBFAIR",
   "short_name": "COSMOS-JOBFAIR",
   "version": "com.phonegap.cosmosoperations",
-  "description": "Hello World sample application that responds to the deviceready event.",
+  "description": "This is an application for cosmos - operations.",
   "author": "PhoneGap Team",
-  "icons": [],
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "orientation": "portrait",
   "start_url": "index.html"
 }
