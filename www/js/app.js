@@ -573,7 +573,67 @@ function save_pro(){
   var sess_u_id = window.localStorage.getItem("session_u_id");
   $("#sess_u_id").val(sess_u_id);
   var newproreg = $(".newproreg").serialize();
-  console.log(newproreg);
+  //console.log(newproreg);
+  var name=$('input[name="name"]').val();
+  var street_1=$('input[name="street_1"]').val();
+  var street_2=$('input[name="street_2"]').val();
+  var state=$('input[name="state"]').val();
+  var dist=$('input[name="dist"]').val();
+  var city=$('input[name="city"]').val();
+  var pincode=$('input[name="pincode"]').val();
+  var mobile=$('input[name="mobile"]').val();
+  var qualification=$('input[name="qualification"]').val();
+  var dob=$('input[name="dob"]').val();
+  //var gender=$('input[name="gender"]').val();
+  if(name==''){
+    app.dialog.alert("Name should not be empty.");
+    return false;
+  }
+  if(street_1==''){
+    app.dialog.alert("Street 1 should not be empty.");
+    return false;
+  }
+  if(street_2==''){
+    app.dialog.alert("Street 2 should not be empty.");
+    return false;
+  }
+  var state = $('#state');
+  if (state.val() === '') {
+    app.dialog.alert("Select State.");
+    return false;
+  }
+  var dist = $('#dist');  
+  if(dist.val() === ''){
+    app.dialog.alert("Select District.");
+    return false;
+  }
+  var city = $('#city'); 
+  if(city.val() === ''){
+    app.dialog.alert("Select City.");
+    return false;
+  }
+  if(pincode==''){
+    app.dialog.alert("Pincode should not be empty.");
+    return false;
+  }
+  if(mobile==''){
+    app.dialog.alert("Mobile should not be empty.");
+    return false;
+  } 
+  var qualification = $('#qualification'); 
+  if(qualification.val() === ''){
+    app.dialog.alert("Select Qualification.");
+    return false;
+  }
+  if(dob==''){
+    app.dialog.alert("Date of birth should not be empty.");
+    return false;
+  }
+  if (!$("input[name='gender']:checked").val()) {
+    app.dialog.alert('Select Gender.');
+    return false;
+  }
+
   var old_aadharPic = 'NULL';
   var old_userPic = 'NULL';
   var mode = 'add';
@@ -608,7 +668,64 @@ function edit_pro(){
   var editproreg = $(".editproreg").serialize();   
   var old_aadharPic=$('input[name="old_aadharPic"]').val();
   var old_userPic = $('input[name="old_userPic"]').val();
-
+  var name=$('input[name="name"]').val();
+  var street_1=$('input[name="street_1"]').val();
+  var street_2=$('input[name="street_2"]').val();
+  var state=$('input[name="state"]').val();
+  var dist=$('input[name="dist"]').val();
+  var city=$('input[name="city"]').val();
+  var pincode=$('input[name="pincode"]').val();
+  var mobile=$('input[name="mobile"]').val();
+  var qualification=$('input[name="qualification"]').val();
+  var dob=$('input[name="dob"]').val();
+  if(name==''){
+    app.dialog.alert("Name should not be empty.");
+    return false;
+  }
+  if(street_1==''){
+    app.dialog.alert("Street 1 should not be empty.");
+    return false;
+  }
+  if(street_2==''){
+    app.dialog.alert("Street 2 should not be empty.");
+    return false;
+  }
+  var state = $('#state');
+  if (state.val() === '') {
+    app.dialog.alert("Select State.");
+    return false;
+  }
+  var dist = $('#dist');  
+  if(dist.val() === ''){
+    app.dialog.alert("Select District.");
+    return false;
+  }
+  var city = $('#city'); 
+  if(city.val() === ''){
+    app.dialog.alert("Select City.");
+    return false;
+  }
+  if(pincode==''){
+    app.dialog.alert("Pincode should not be empty.");
+    return false;
+  }
+  if(mobile==''){
+    app.dialog.alert("Mobile should not be empty.");
+    return false;
+  } 
+  var qualification = $('#qualification'); 
+  if(qualification.val() === ''){
+    app.dialog.alert("Select Qualification.");
+    return false;
+  }
+  if(dob==''){
+    app.dialog.alert("Date of birth should not be empty.");
+    return false;
+  }
+  if (!$("input[name='gender']:checked").val()) {
+    app.dialog.alert('Select Gender.');
+    return false;
+  }
   //console.log(editproreg);
   //alert(old_aadharPic+"-----"+old_userPic);
   //alert(editproreg);
