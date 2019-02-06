@@ -12,12 +12,12 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="android-targetSdkVersion" value="26" />
     <preference name="orientation" value="portrait" />
-    <icon src="icon.png" />
+
     <platform name="android">
         <preference name="SplashScreen" value="screen" />
         <preference name="SplashScreenDelay" value="7000" />
         <preference name="ShowSplashScreenSpinner" value="false" />
-        <splash src="splash.png" />
+
     </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
